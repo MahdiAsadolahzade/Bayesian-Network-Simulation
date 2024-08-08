@@ -1,36 +1,99 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Bayesian Network Simulation Web App
 
-## Getting Started
+This project is a web application that simulates a Bayesian Network for a smart home IoT network. The simulation helps assess the risk levels based on the impact of various sensors being compromised. The application is built with Next.js (TypeScript) and uses a Python script for the simulation logic.
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- Run Bayesian Network simulations with customizable parameters.
+- View simulation results in a user-friendly table.
+- Display code snippets with syntax highlighting.
+- Provide information about the simulation and its purpose.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Project Structure
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- `src/app/page.tsx`: Main entry point of the application.
+- `src/components/SimulationTest.tsx`: Component handling simulation form, submission, and result display.
+- `src/components/CodeSnippet.tsx`: Component for displaying code snippets with syntax highlighting.
+- `src/components/SimulationInfo.tsx`: Component providing information about the simulation.
+- `simulate.py`: Python script containing the simulation logic.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Installation
 
-## Learn More
+1. **Clone the repository:**
 
-To learn more about Next.js, take a look at the following resources:
+    ```bash
+    git clone <repository-url>
+    cd <repository-directory>
+    ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+2. **Install dependencies:**
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+    ```bash
+    npm install
+    ```
 
-## Deploy on Vercel
+3. **Ensure Python is installed:** 
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+   Make sure Python 3.x is installed on your system. You can download it from [Python's official website](https://www.python.org/downloads/).
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+4. **Install Python dependencies:**
+
+    ```bash
+    pip install numpy pandas
+    ```
+
+## Running the Application
+
+1. **Start the Next.js development server:**
+
+    ```bash
+    npm run dev
+    ```
+
+   This will start the Next.js server at `http://localhost:3000`.
+
+2. **Run the Python script separately:**
+
+    You can manually run the `simulate.py` script if needed, but the application will handle it automatically via the API route.
+
+## API Routes
+
+- **`/api/simulate` (POST)**: 
+  - **Description**: Runs the Bayesian Network simulation.
+  - **Request Body**: `{ "numSimulations": number }`
+  - **Response**: JSON object with simulation results.
+
+## Components
+
+- **`SimulationTest`**: Handles the simulation form, submission, loading state, and displays results.
+- **`CodeSnippet`**: Displays a code snippet with syntax highlighting using Prism.js.
+- **`SimulationInfo`**: Provides information about the simulation, including its purpose and details.
+
+## Example
+
+### Running a Simulation
+
+1. Enter the number of simulations in the input field.
+2. Click the "Run Simulation" button.
+3. View the results in the table format below the form.
+
+### Viewing Code
+
+The `CodeSnippet` component displays the simulation code with syntax highlighting. The Python code snippet is included for reference.
+
+## Troubleshooting
+
+- **Syntax Highlighting Issues**: Ensure that the Prism.js styles and scripts are correctly loaded.
+- **Python Script Errors**: Check Python installation and ensure required libraries (`numpy`, `pandas`) are installed.
+
+## Contributing
+
+Feel free to fork the repository and submit pull requests. For major changes or feature requests, please open an issue first to discuss.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+## Contact
+
+For questions or support, please contact [your-email@example.com](mailto:your-email@example.com).
