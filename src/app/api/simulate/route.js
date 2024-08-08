@@ -1,7 +1,7 @@
 import { NextResponse, NextRequest } from "next/server";
 import { exec } from "child_process";
 
-export const POST = async (request: Request) => {
+export const POST = async (request) => {
   try {
     const { numSimulations } = await request.json();
 
