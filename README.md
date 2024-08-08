@@ -22,7 +22,7 @@ This project is a web application that simulates a Bayesian Network for a smart 
 1. **Clone the repository:**
 
     ```bash
-    git clone <repository-url>
+    git clone https://github.com/MahdiAsadolahzade/Bayesian-Network-Simulation.git
     cd <repository-directory>
     ```
 
@@ -90,10 +90,7 @@ The `CodeSnippet` component displays the simulation code with syntax highlightin
 
 Feel free to fork the repository and submit pull requests. For major changes or feature requests, please open an issue first to discuss.
 
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
 ## Contact
 
-For questions or support, please contact [your-email@example.com](mailto:your-email@example.com).
+For questions or support, please contact [mahdiasadi140@gmail.com](mailto:mahdiasadi140@gmail.com).
